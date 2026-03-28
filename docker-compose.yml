@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pulsemonitor-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+    restart: unless-stopped
+    networks:
+      - pulsemonitor-network
+
+  frontend:
+    image: nginx:alpine
+    container_name: pulsemonitor-frontend
+    ports:
+      - "5173:80"
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    networks:
+      - pulsemonitor-network
+
+networks:
+  pulsemonitor-network:
+    driver: bridge
