@@ -45,11 +45,6 @@ MONITORED_APPS = [
         "description": "Financial management platform"
     },
     {
-        "name": "SecureAuth",
-        "url": "http://192.168.50.160:5000/health",
-        "description": "PostgreSQL authentication API"
-    },
-    {
         "name": "SecureAuth-Lite",
         "url": "http://192.168.50.160:5003/health",
         "description": "SQLite authentication API"
