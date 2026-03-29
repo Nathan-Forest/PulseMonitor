@@ -49,11 +49,6 @@ MONITORED_APPS = [
         "url": "http://192.168.50.160:5003/health",
         "description": "SQLite authentication API"
     },
-    {
-        "name": "Nginx",
-        "url": "http://192.168.50.160",
-        "description": "Reverse proxy and web server"
-    }
 ]
 
 # Async function to check app health
