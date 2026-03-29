@@ -49,6 +49,11 @@ MONITORED_APPS = [
         "url": "http://192.168.50.160:5003/health",
         "description": "SQLite authentication API"
     },
+    {
+        "name": "LifeOS",
+        "url": "http://192.168.50.160:5005/health",
+        "description": "Personal operating system API"
+    },
 ]
 
 # Async function to check app health
