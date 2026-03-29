@@ -26,7 +26,7 @@ app.add_middleware(
 MONITORED_APPS = [
     {
         "name": "PulseMonitor",
-        "url": "http://192.168.50.160:8000/",
+        "url": "http://localhost:8000/",
         "description": "Application health monitoring"
     },
     {
