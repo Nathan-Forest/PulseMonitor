@@ -3,7 +3,8 @@ import { StatusCard } from './components/StatusCard';
 import { useWebSocket } from './hooks/useWebSocket';
 
 function App() {
-  const { healthData, isConnected } = useWebSocket('ws://localhost:8000/ws');
+  const wsUrl = `ws://${window.location.host}/ws`;
+const { healthData, isConnected } = useWebSocket(wsUrl);
 
   return (
     <div className="min-h-screen p-8">

@@ -1,4 +1,4 @@
-import { Activity, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
+import { AlertCircle, CheckCircle, XCircle } from 'lucide-react';
 import type { HealthStatus } from '../types';
 
 interface StatusCardProps {
