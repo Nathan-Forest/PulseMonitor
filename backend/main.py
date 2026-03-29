@@ -51,7 +51,7 @@ MONITORED_APPS = [
     },
     {
         "name": "Nginx",
-        "url": "http://192.168.50.160:80",
+        "url": "http://192.168.50.160",
         "description": "Reverse proxy and web server"
     }
 ]
