@@ -36,12 +36,12 @@ MONITORED_APPS = [
     },
     {
         "name": "StockTracker",
-        "url": "http://192.168.50.160:5001/health",
+        "url": "http://192.168.50.160:5001/",
         "description": "Stock portfolio tracker"
     },
     {
         "name": "FinanceHub",
-        "url": "http://192.168.50.160:5002/health",
+        "url": "http://192.168.50.160:5002/",
         "description": "Financial management platform"
     },
     {
