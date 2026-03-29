@@ -15,15 +15,14 @@ services:
       - pulsemonitor-network
 
   frontend:
-    image: nginx:alpine
-    container_name: pulsemonitor-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pulsemonitor-frontend-prod
     ports:
-      - "5173:80"
-    volumes:
-      - ./frontend/dist:/usr/share/nginx/html:ro
-    restart: unless-stopped
-    networks:
-      - pulsemonitor-network
+      - "8080:80"
+    depends_on:
+      - backend
 
 networks:
   pulsemonitor-network:
