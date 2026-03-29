@@ -16,34 +16,50 @@ app = FastAPI(
 # CORS Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Frontend URL
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # GET, POST, etc.
-    allow_headers=["*"],  # Authorization, Content-Type, etc.
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
-
-# In-memory storage
-app_status = {}
 
 # Apps to monitor configuration
 MONITORED_APPS = [
     {
-        "name": "SecureAuth",
-        "url": "http://localhost:5000/health",
-        "description": "Authentication API"
+        "name": "PulseMonitor",
+        "url": "http://192.168.50.160:8000/",
+        "description": "Application health monitoring"
     },
     {
-        "name": "StockTracker", 
-        "url": "http://localhost:5001/health",
-        "description": "Stock Portfolio Tracker"
+        "name": "CloudControl",
+        "url": "http://192.168.50.160:3000",
+        "description": "DevOps platform and dashboard"
+    },
+    {
+        "name": "StockTracker",
+        "url": "http://192.168.50.160:5001/health",
+        "description": "Stock portfolio tracker"
     },
     {
         "name": "FinanceHub",
-        "url": "http://localhost:5002/health", 
-        "description": "Financial Management"
+        "url": "http://192.168.50.160:5002/health",
+        "description": "Financial management platform"
+    },
+    {
+        "name": "SecureAuth",
+        "url": "http://192.168.50.160:5000/health",
+        "description": "PostgreSQL authentication API"
+    },
+    {
+        "name": "SecureAuth-Lite",
+        "url": "http://192.168.50.160:5003/health",
+        "description": "SQLite authentication API"
+    },
+    {
+        "name": "Nginx",
+        "url": "http://192.168.50.160:80",
+        "description": "Reverse proxy and web server"
     }
 ]
-
 
 # Async function to check app health
 async def check_app_health(app: Dict) -> Dict:
