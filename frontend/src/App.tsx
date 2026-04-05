@@ -3,7 +3,8 @@ import { StatusCard } from './components/StatusCard';
 import { useWebSocket } from './hooks/useWebSocket';
 
 function App() {
-  const wsUrl = `ws://${window.location.host}/ws`;
+const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+const wsUrl = `${wsProtocol}//${window.location.host}/ws`;
 const { healthData, isConnected } = useWebSocket(wsUrl);
 
   return (

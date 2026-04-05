@@ -54,6 +54,11 @@ MONITORED_APPS = [
         "url": "http://192.168.50.160:5005/health",
         "description": "Personal operating system API"
     },
+        {
+        "name": "ServerControl",
+        "url": "http://192.168.50.160:5006/health",
+        "description": "Docker management and metrics API"
+    },
 ]
 
 # Async function to check app health
